@@ -14,7 +14,7 @@ import jp.co.sample.domain.Employee;
 
 /**
  * @author yuuki
- * DBのemployeesテーブルにアクセスするためのrepository
+ * DBのemployeesテーブルにアクセスするためのリポジトリ
  */
 @Repository
 public class EmployeeRepository {
@@ -44,8 +44,10 @@ public class EmployeeRepository {
 		};
 		
 	/**
-	 * @return
 	 * 従業員一覧情報を入社日順で取得するメソッド
+	 * 
+	 * @return 全従業員の情報
+	 * 
 	 */
 	public List<Employee> findAll(){		
 		String sql = "SELECT id, name, image, gender, hire_date, zip_code, mail_address," + 
@@ -59,9 +61,11 @@ public class EmployeeRepository {
 	
 	
 	/**
-	 * @param id
-	 * @return
 	 * idから従業員情報を取得するメソッド
+	 * 
+	 * @param id 主キー
+	 * @return　1人分の従業員情報
+	 * 
 	 */
 	public Employee load(Integer id) {
 		String sql = "SELECT id, name, image, gender, hire_date, zip_code, mail_address," + 

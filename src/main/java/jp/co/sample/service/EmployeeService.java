@@ -10,7 +10,7 @@ import jp.co.sample.domain.Employee;
 import jp.co.sample.repository.EmployeeRepository;
 
 /**
- * 従業員情報一覧を全件検索する業務処理を行う.
+ * 従業員情報に関する業務処理を行う.
  * 
  * @author yuuki
  *

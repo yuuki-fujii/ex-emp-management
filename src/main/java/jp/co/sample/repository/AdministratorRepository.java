@@ -36,7 +36,7 @@ public class AdministratorRepository {
 		};
 	
 	/**
-	 * 引数に渡された管理者オブジェクトをデータベースに保存します。
+	 * 引数に渡された管理者オブジェクトをデータベースに保存する。
 	 * 
 	 * @param administrator 管理者オブジェクト
 	 */
@@ -52,9 +52,9 @@ public class AdministratorRepository {
 	 * メールアドレスとパスワードから管理者情報を取得するメソッド
 	 * 戻り値が存在しない場合、nullを返す
 	 * 
-	 * @param mailAddress
-	 * @param password
-	 * @return　Administrator
+	 * @param mailAddress メールアドレス
+	 * @param password　パスワード
+	 * @return　Administrator　管理者オブジェクト
 	 */
 	public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
 		String sql = "SELECT id,name,mail_address,password FROM administrators "

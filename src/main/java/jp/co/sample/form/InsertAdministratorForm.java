@@ -1,12 +1,13 @@
 package jp.co.sample.form;
 
 /**
- * 管理者情報が入るフォームクラス
+ * 管理者登録用フォーム
  * 
  * @author yuuki
  *
  */
 public class InsertAdministratorForm {
+	
 	/** 名前 */
 	private String name;
 	/** メールアドレス */

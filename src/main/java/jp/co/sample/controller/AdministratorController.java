@@ -18,7 +18,7 @@ import jp.co.sample.form.LoginForm;
 import jp.co.sample.service.AdministratorService;
 
 /**
- * 管理者情報の処理制御を行うコントローラ.
+ * 管理者情報の処理制御 /ログイン / ログアウトを行うコントローラ.
  * 
  * @author yuuki
  *
@@ -75,9 +75,9 @@ public class AdministratorController {
 	}
 	
 	/**
-	 * @param form 登録フォームに入力された情報
+	 * @param form 管理者登録フォームに入力された情報
 	 * 
-	 * @return　登録画面
+	 * @return　管理者登録画面
 	 */
 	@RequestMapping("/insert")
 	public String insert(InsertAdministratorForm form) {
@@ -92,7 +92,7 @@ public class AdministratorController {
 	 * 
 	 * @param form　ログインフォーム　
 	 * @param model　リクエストスコープ
-	 * @return
+	 * @return 従業員一覧ページ
 	 */
 	@RequestMapping("/login")
 	public String login(@Validated LoginForm form,Model model) {
@@ -107,6 +107,11 @@ public class AdministratorController {
 		return "forward:/employee/showList";
 	}
 	
+	/**
+	 * ログアウト機能
+	 * 
+	 * @return 管理者ログイン画面
+	 */
 	@RequestMapping("/logout")
 	public String logout() {
 		session.invalidate();

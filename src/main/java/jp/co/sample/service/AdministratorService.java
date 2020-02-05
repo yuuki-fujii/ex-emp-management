@@ -8,7 +8,7 @@ import jp.co.sample.domain.Administrator;
 import jp.co.sample.repository.AdministratorRepository;
 
 /**
- * 管理者情報を登録する業務処理を行う.
+ * 管理者情報に関する業務処理 / ログイン処理を行う.
  * 
  * @author yuuki
  */
