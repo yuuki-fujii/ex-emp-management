@@ -1,5 +1,11 @@
 package jp.co.sample.form;
 
+/**
+ * 従業員情報更新用フォーム
+ * 
+ * @author yuuki
+ *
+ */
 public class UpdateEmployeeForm {
 	
 	/** 主キー */
