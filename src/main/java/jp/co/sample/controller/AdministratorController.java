@@ -75,7 +75,7 @@ public class AdministratorController {
 	}
 	
 	/**
-	 * @param form 登録フォームから受け取った情報
+	 * @param form 登録フォームに入力された情報
 	 * 
 	 * @return　登録画面
 	 */
@@ -107,5 +107,10 @@ public class AdministratorController {
 		return "forward:/employee/showList";
 	}
 	
+	@RequestMapping("/logout")
+	public String logout() {
+		session.invalidate();
+		return "redirect:/";
+	}
 	
 }
