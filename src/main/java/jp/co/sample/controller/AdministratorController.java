@@ -1,8 +1,14 @@
 package jp.co.sample.controller;
 
+import javax.naming.Binding;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,6 +29,9 @@ public class AdministratorController {
 	
 	@Autowired
 	private AdministratorService administratorService;
+	
+	@Autowired
+	private HttpSession session;
 	
 	/**
 	 * 管理者フォームをリクエストスコープに格納
@@ -67,6 +76,7 @@ public class AdministratorController {
 	
 	/**
 	 * @param form 登録フォームから受け取った情報
+	 * 
 	 * @return　登録画面
 	 */
 	@RequestMapping("/insert")
@@ -75,5 +85,18 @@ public class AdministratorController {
 		BeanUtils.copyProperties(form, administrator);
 		administratorService.insert(administrator);
 		return "redirect:/";
+	}
+	
+	@RequestMapping("/login")
+	public String login(@Validated LoginForm form, BindingResult result ,Model model) {
+		Administrator administrator = administratorService.login(form.getMailAddress(), form.getPassword());
+		
+		if (administrator == null) {
+			model.addAttribute("error", "メールアドレスまたはパスワードが不正です");
+			return "/administrator/login";
+		}
+			
+		session.setAttribute("administratorName", administrator);
+		return "forward:/employee/showList";
 	}
 }
