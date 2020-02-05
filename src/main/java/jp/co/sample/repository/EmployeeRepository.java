@@ -12,12 +12,19 @@ import org.springframework.stereotype.Repository;
 
 import jp.co.sample.domain.Employee;
 
+/**
+ * @author yuuki
+ * DBのemployeesテーブルにアクセスするためのrepository
+ */
 @Repository
 public class EmployeeRepository {
 
 	@Autowired
 	private NamedParameterJdbcTemplate template;
 	
+	/**
+	 * Employeeクラスオブジェクトを生成するRowMapper
+	 */
 	private static final RowMapper<Employee> EMPLOYEE_ROW_MAPPER 
 		= (rs, i)->{
 			Employee employee = new Employee();
@@ -35,6 +42,10 @@ public class EmployeeRepository {
 			return employee;
 		};
 		
+	/**
+	 * @return
+	 * 従業員一覧情報を入社日順で取得するメソッド
+	 */
 	public List<Employee> findAll(){		
 		String sql = "SELECT id, name, image, gender, hire_date, zip_code," + 
 					 "address, telephone, salary, characteristics, dependents_count " +
@@ -46,6 +57,11 @@ public class EmployeeRepository {
 	}
 	
 	
+	/**
+	 * @param id
+	 * @return
+	 * idから従業員情報を取得するメソッド
+	 */
 	public Employee load(Integer id) {
 		String sql = "SELECT id, name, image, gender, hire_date, zip_code," + 
 				     "address, telephone, salary, characteristics, dependents_count " +
@@ -58,6 +74,10 @@ public class EmployeeRepository {
 		return employee;
 	}
 	
+	/**
+	 * @param employee
+	 * 従業員情報の扶養人数だけを更新するメソッド
+	 */
 	public void update(Employee employee) {
 		SqlParameterSource param = new BeanPropertySqlParameterSource(employee);
 		
