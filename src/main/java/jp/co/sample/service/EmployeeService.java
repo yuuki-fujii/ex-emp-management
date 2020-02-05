@@ -10,8 +10,8 @@ import jp.co.sample.domain.Employee;
 import jp.co.sample.repository.EmployeeRepository;
 
 /**
- * 
  * 従業員情報一覧を全件検索する業務処理を行う.
+ * 
  * @author yuuki
  *
  */
@@ -27,5 +27,8 @@ public class EmployeeService {
 		return employeeRepository.findAll();
 	}
 	
+	public Employee showDetail(Integer id) {
+		return employeeRepository.load(id);
+	}
 	
 }

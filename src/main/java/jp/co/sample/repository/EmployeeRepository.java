@@ -33,6 +33,7 @@ public class EmployeeRepository {
 			employee.setImage(rs.getString("image"));
 			employee.setGender(rs.getString("gender"));
 			employee.setHireDate(rs.getDate("hire_date"));
+			employee.setMailAddress(rs.getString("mail_address"));
 			employee.setZipCode(rs.getString("zip_code"));
 			employee.setAddress(rs.getString("address"));
 			employee.setTelephone(rs.getString("telephone"));
@@ -47,7 +48,7 @@ public class EmployeeRepository {
 	 * 従業員一覧情報を入社日順で取得するメソッド
 	 */
 	public List<Employee> findAll(){		
-		String sql = "SELECT id, name, image, gender, hire_date, zip_code," + 
+		String sql = "SELECT id, name, image, gender, hire_date, zip_code, mail_address," + 
 					 "address, telephone, salary, characteristics, dependents_count " +
 					 "FROM employees ORDER BY hire_date";
 		
@@ -63,7 +64,7 @@ public class EmployeeRepository {
 	 * idから従業員情報を取得するメソッド
 	 */
 	public Employee load(Integer id) {
-		String sql = "SELECT id, name, image, gender, hire_date, zip_code," + 
+		String sql = "SELECT id, name, image, gender, hire_date, zip_code, mail_address," + 
 				     "address, telephone, salary, characteristics, dependents_count " +
 				 	 "FROM employees WHERE id=:id";
 		
