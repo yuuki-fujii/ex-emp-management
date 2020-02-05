@@ -25,7 +25,15 @@ public class UpdateEmployeeForm {
 	public void setDependentsCount(String dependentsCount) {
 		this.dependentsCount = dependentsCount;
 	}
-		
+	
+	public Integer getIntId() {
+		return Integer.parseInt(id);
+	}
+	
+	public Integer getIntDependentsCount() {
+		return Integer.parseInt(dependentsCount);
+	}
+	
 	@Override
 	public String toString() {
 		return "UpdateEmployeeForm [id=" + id + ", dependentsCount=" + dependentsCount + ", getId()=" + getId()
