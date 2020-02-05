@@ -2,6 +2,11 @@ package jp.co.sample.domain;
 
 import java.util.Date;
 
+/**
+ * @author yuuki
+ * 従業員情報を表すドメインクラス
+ * DBのemployeesテーブルに対応
+ */
 public class Employee {
 	
 	/* 自動採番されたid */
@@ -9,24 +14,34 @@ public class Employee {
 	
 	/** 名前を表すフィールド変数 */
 	private String name;
+	
 	/* 画像を表すフィールド変数 */
 	private String image;
+	
 	/* 性別を表すフィールド変数 */
 	private String gender;
+	
 	/* 入社日を表すフィールド変数 */
 	private Date hireDate;
+	
 	/* メールアドレスを表すフィールド変数 */
 	private String mailAddress;
+	
 	/* 郵便番号を表すフィールド変数 */
 	private String zipCode;
+	
 	/* 住所を表すフィールド変数 */
 	private String address;
+	
 	/* 電話番号を表すフィールド変数 */
 	private String telephone;
+	
 	/* 給料を表すフィールド変数 */
 	private Integer salary;
+	
 	/* 特性を表すフィールド変数 */
 	private String characteristics;
+	
 	/* 不要人数を表すフィールド変数 */
 	private Integer dependentsCount;
 	
