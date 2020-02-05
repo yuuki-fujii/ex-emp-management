@@ -87,8 +87,15 @@ public class AdministratorController {
 		return "redirect:/";
 	}
 	
+	/**
+	 * ログイン機能
+	 * 
+	 * @param form　ログインフォーム　
+	 * @param model　リクエストスコープ
+	 * @return
+	 */
 	@RequestMapping("/login")
-	public String login(@Validated LoginForm form, BindingResult result ,Model model) {
+	public String login(@Validated LoginForm form,Model model) {
 		Administrator administrator = administratorService.login(form.getMailAddress(), form.getPassword());
 		
 		if (administrator == null) {
@@ -99,4 +106,6 @@ public class AdministratorController {
 		session.setAttribute("administratorName", administrator);
 		return "forward:/employee/showList";
 	}
+	
+	
 }
