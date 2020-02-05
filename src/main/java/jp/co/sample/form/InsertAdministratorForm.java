@@ -1,8 +1,11 @@
 package jp.co.sample.form;
 
 public class InsertAdministratorForm {
+	/** 名前を意味する属性 */
 	private String name;
+	/** メールアドレスを意味する属性 */
 	private String mailAddress;
+	/** パスワードを意味する属性 */
 	private String password;
 	
 	public String getName() {
