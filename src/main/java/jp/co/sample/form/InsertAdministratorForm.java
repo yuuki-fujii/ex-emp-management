@@ -1,11 +1,17 @@
 package jp.co.sample.form;
 
+/**
+ * 管理者情報が入るフォームクラス
+ * 
+ * @author yuuki
+ *
+ */
 public class InsertAdministratorForm {
-	/** 名前を意味する属性 */
+	/** 名前 */
 	private String name;
-	/** メールアドレスを意味する属性 */
+	/** メールアドレス */
 	private String mailAddress;
-	/** パスワードを意味する属性 */
+	/** パスワード */
 	private String password;
 	
 	public String getName() {

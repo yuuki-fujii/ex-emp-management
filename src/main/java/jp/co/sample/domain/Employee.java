@@ -3,46 +3,47 @@ package jp.co.sample.domain;
 import java.util.Date;
 
 /**
- * @author yuuki
  * 従業員情報を表すドメインクラス
- * DBのemployeesテーブルに対応
+ * 
+ * @author yuuki
+ * 
  */
 public class Employee {
 	
-	/* 自動採番されたid */
+	/** 主キー */
 	private Integer id;
 	
-	/** 名前を表すフィールド変数 */
+	/** 名前 */
 	private String name;
 	
-	/* 画像を表すフィールド変数 */
+	/** 画像 */
 	private String image;
 	
-	/* 性別を表すフィールド変数 */
+	/** 性別 */
 	private String gender;
 	
-	/* 入社日を表すフィールド変数 */
+	/** 入社日 */
 	private Date hireDate;
 	
-	/* メールアドレスを表すフィールド変数 */
+	/** メールアドレス */
 	private String mailAddress;
 	
-	/* 郵便番号を表すフィールド変数 */
+	/** 郵便番号 */
 	private String zipCode;
 	
-	/* 住所を表すフィールド変数 */
+	/** 住所 */
 	private String address;
 	
-	/* 電話番号を表すフィールド変数 */
+	/** 電話番号 */
 	private String telephone;
 	
-	/* 給料を表すフィールド変数 */
+	/** 給料 */
 	private Integer salary;
 	
-	/* 特性を表すフィールド変数 */
+	/** 特性 */
 	private String characteristics;
 	
-	/* 不要人数を表すフィールド変数 */
+	/** 扶養人数 */
 	private Integer dependentsCount;
 	
 	public Employee() {}
