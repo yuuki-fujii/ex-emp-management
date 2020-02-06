@@ -1,7 +1,7 @@
 package jp.co.sample.form;
 
 /**
- * 従業員情報更新用フォーム
+ * 従業員情報更新用フォーム.
  * 
  * @author yuuki
  *

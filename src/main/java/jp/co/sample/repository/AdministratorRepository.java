@@ -13,8 +13,9 @@ import org.springframework.stereotype.Repository;
 import jp.co.sample.domain.Administrator;
 
 /**
- * @author yuuki
  * administratorsテーブルにアクセスするためのリポジトリ.
+ * 
+ * @author yuuki
  */
 @Repository
 public class AdministratorRepository {
@@ -36,7 +37,7 @@ public class AdministratorRepository {
 		};
 	
 	/**
-	 * 引数に渡された管理者オブジェクトをデータベースに保存する。
+	 * 引数に渡された管理者オブジェクトをデータベースに保存する.
 	 * 
 	 * @param administrator 管理者オブジェクト
 	 */
@@ -49,12 +50,12 @@ public class AdministratorRepository {
 	}
 	
 	/**
-	 * メールアドレスとパスワードから管理者情報を取得するメソッド
-	 * 戻り値が存在しない場合、nullを返す
+	 * メールアドレスとパスワードから管理者情報を取得するメソッド.
+	 * 
 	 * 
 	 * @param mailAddress メールアドレス
 	 * @param password　パスワード
-	 * @return　Administrator　管理者オブジェクト
+	 * @return　Administrator　管理者オブジェクト(戻り値が存在しない場合、nullを返す)
 	 */
 	public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
 		String sql = "SELECT id,name,mail_address,password FROM administrators "

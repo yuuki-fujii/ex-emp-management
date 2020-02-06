@@ -24,7 +24,7 @@ public class EmployeeService {
 	
 	
 	/**
-	 * 従業員一覧を取得 
+	 * 従業員一覧を取得. 
 	 * 
 	 * @return 従業員リスト
 	 */
@@ -33,7 +33,7 @@ public class EmployeeService {
 	}
 	
 	/**
-	 * 1人の従業員の詳細情報を取得
+	 * 1人の従業員の詳細情報を取得.
 	 * 
 	 * @param id　主キー
 	 * @return　従業員オブジェクト
@@ -43,7 +43,7 @@ public class EmployeeService {
 	}
 	
 	/**
-	 * 従業員情報の更新
+	 * 従業員情報の更新.
 	 * 
 	 * @param employee 従業員オブジェクト
 	 */

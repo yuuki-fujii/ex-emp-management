@@ -13,8 +13,10 @@ import org.springframework.stereotype.Repository;
 import jp.co.sample.domain.Employee;
 
 /**
+ * employeesテーブルにアクセスするためのリポジトリ.
+ * 
  * @author yuuki
- * DBのemployeesテーブルにアクセスするためのリポジトリ
+ * 
  */
 @Repository
 public class EmployeeRepository {
@@ -23,7 +25,7 @@ public class EmployeeRepository {
 	private NamedParameterJdbcTemplate template;
 	
 	/**
-	 * Employeeクラスオブジェクトを生成するRowMapper
+	 * Employeeクラスオブジェクトを生成するRowMapper.
 	 */
 	private static final RowMapper<Employee> EMPLOYEE_ROW_MAPPER 
 		= (rs, i)->{
@@ -44,7 +46,7 @@ public class EmployeeRepository {
 		};
 		
 	/**
-	 * 従業員一覧情報を入社日順で取得するメソッド
+	 * 従業員一覧情報を入社日順で取得するメソッド.
 	 * 
 	 * @return 全従業員の情報
 	 * 
@@ -61,7 +63,7 @@ public class EmployeeRepository {
 	
 	
 	/**
-	 * idから従業員情報を取得するメソッド
+	 * idから従業員情報を取得するメソッド.
 	 * 
 	 * @param id 主キー
 	 * @return　1人分の従業員情報
@@ -80,8 +82,10 @@ public class EmployeeRepository {
 	}
 	
 	/**
+	 * 従業員情報の扶養人数だけを更新するメソッド.
+	 * 
 	 * @param employee
-	 * 従業員情報の扶養人数だけを更新するメソッド
+	 * 
 	 */
 	public void update(Employee employee) {
 		SqlParameterSource param = new BeanPropertySqlParameterSource(employee);

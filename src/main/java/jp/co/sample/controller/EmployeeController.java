@@ -2,7 +2,6 @@ package jp.co.sample.controller;
 
 import java.util.List;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +13,7 @@ import jp.co.sample.form.UpdateEmployeeForm;
 import jp.co.sample.service.EmployeeService;
 
 /**
- * 従業員情報の処理制御を行うコントローラ
+ * 従業員情報の処理制御を行うコントローラ.
  * 
  * @author yuuki
  *
@@ -27,7 +26,7 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 	
 	/**
-	 * UpdateEmployeeFormをリクエストスコープに格納
+	 * UpdateEmployeeFormをリクエストスコープに格納.
 	 * 
 	 * @return 扶養人数更新フォーム
 	 */
@@ -38,7 +37,7 @@ public class EmployeeController {
 	
 	
 	/**
-	 * 従業員一覧を取得
+	 * 従業員一覧を取得.
 	 * 
 	 * @param model リクエストスコープ
 	 * @return　従業員一覧ページ
@@ -52,7 +51,7 @@ public class EmployeeController {
 	
 	
 	/**
-	 * 1人の従業員詳細情報を取得
+	 * 1人の従業員詳細情報を取得.
 	 * 
 	 * @param id　主キー
 	 * @param model　リクエストスコープ
@@ -67,7 +66,7 @@ public class EmployeeController {
 	}
 	
 	/**
-	 * 従業員情報を更新
+	 * 従業員情報を更新.
 	 * 
 	 * @return 従業員一覧ページ
 	 */

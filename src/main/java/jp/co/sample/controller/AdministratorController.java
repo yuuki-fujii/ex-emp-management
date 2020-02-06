@@ -1,13 +1,11 @@
 package jp.co.sample.controller;
 
-import javax.naming.Binding;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +32,7 @@ public class AdministratorController {
 	private HttpSession session;
 	
 	/**
-	 * 管理者フォームをリクエストスコープに格納
+	 * 管理者フォームをリクエストスコープに格納.
 	 * 
 	 * @return 管理者フォームオブジェクト
 	 */
@@ -44,7 +42,7 @@ public class AdministratorController {
 	}
 	
 	/**
-	 * ログインフォームをリクエストスコープに格納
+	 * ログインフォームをリクエストスコープに格納.
 	 * 
 	 * @return ログインフォームオブジェクト
 	 */
@@ -55,7 +53,7 @@ public class AdministratorController {
 	
 	
 	/**
-	 * 管理者ログイン画面に遷移
+	 * 管理者ログイン画面に遷移.
 	 * 
 	 * @return 管理者ログイン画面
 	 */
@@ -75,8 +73,9 @@ public class AdministratorController {
 	}
 	
 	/**
-	 * @param form 管理者登録フォームに入力された情報
+	 * 管理者登録を行う.
 	 * 
+	 * @param form 管理者登録フォームに入力された情報
 	 * @return　管理者登録画面
 	 */
 	@RequestMapping("/insert")
@@ -88,7 +87,7 @@ public class AdministratorController {
 	}
 	
 	/**
-	 * ログイン機能
+	 * ログイン機能.
 	 * 
 	 * @param form　ログインフォーム　
 	 * @param model　リクエストスコープ
@@ -103,12 +102,12 @@ public class AdministratorController {
 			return "/administrator/login";
 		}
 			
-		session.setAttribute("administratorName", administrator);
+		session.setAttribute("administratorName", administrator.getName());
 		return "forward:/employee/showList";
 	}
 	
 	/**
-	 * ログアウト機能
+	 * ログアウト機能.
 	 * 
 	 * @return 管理者ログイン画面
 	 */

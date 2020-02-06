@@ -1,7 +1,7 @@
 package jp.co.sample.form;
 
 /**
- * 管理者登録用フォーム
+ * 管理者登録用フォーム.
  * 
  * @author yuuki
  *
