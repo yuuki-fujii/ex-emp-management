@@ -1,5 +1,7 @@
 package jp.co.sample.form;
 
+import javax.validation.constraints.Pattern;
+
 /**
  * 従業員情報更新用フォーム.
  * 
@@ -10,7 +12,9 @@ public class UpdateEmployeeForm {
 	
 	/** 主キー */
 	private String id;
+	
 	/** 扶養人数 */
+	@Pattern(regexp = "^[0-9]+$", message="数字を入力してください")
 	private String dependentsCount;
 	
 	public String getId() {
