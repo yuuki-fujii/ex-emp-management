@@ -6,6 +6,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -79,7 +81,12 @@ public class AdministratorController {
 	 * @return　管理者登録画面
 	 */
 	@RequestMapping("/insert")
-	public String insert(InsertAdministratorForm form) {
+	public String insert(@Validated InsertAdministratorForm form, BindingResult result) {
+		
+		if(result.hasErrors()) {
+			return "/administrator/insert";
+		}
+		
 		Administrator administrator = new Administrator();
 		BeanUtils.copyProperties(form, administrator);
 		administratorService.insert(administrator);
@@ -94,11 +101,14 @@ public class AdministratorController {
 	 * @return 従業員一覧ページ
 	 */
 	@RequestMapping("/login")
-	public String login(@Validated LoginForm form,Model model) {
+	public String login(@Validated LoginForm form, BindingResult result,Model model) {
 		Administrator administrator = administratorService.login(form.getMailAddress(), form.getPassword());
 		
 		if (administrator == null) {
 			model.addAttribute("error", "メールアドレスまたはパスワードが不正です");
+//			result.rejectValue("mailAddess", null , "メールアドレスが違います");
+//			result.rejectValue("password", null, "パスワードが違います");
+			
 			return "/administrator/login";
 		}
 			
