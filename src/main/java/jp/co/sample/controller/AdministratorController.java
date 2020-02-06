@@ -1,5 +1,7 @@
 package jp.co.sample.controller;
 
+import javax.security.auth.message.callback.SecretKeyCallback.Request;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.BeanUtils;
@@ -111,7 +113,6 @@ public class AdministratorController {
 			
 			return "/administrator/login";
 		}
-			
 		session.setAttribute("administratorName", administrator.getName());
 		return "forward:/employee/showList";
 	}

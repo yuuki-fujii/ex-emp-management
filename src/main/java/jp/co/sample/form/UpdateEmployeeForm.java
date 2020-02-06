@@ -16,6 +16,7 @@ public class UpdateEmployeeForm {
 	/** 扶養人数 */
 	@Pattern(regexp = "^[0-9]+$", message="数字を入力してください")
 	private String dependentsCount;
+		
 	
 	public String getId() {
 		return id;
@@ -30,6 +31,8 @@ public class UpdateEmployeeForm {
 		this.dependentsCount = dependentsCount;
 	}
 	
+	
+	
 	public Integer getIntId() {
 		return Integer.parseInt(id);
 	}
@@ -37,6 +40,7 @@ public class UpdateEmployeeForm {
 	public Integer getIntDependentsCount() {
 		return Integer.parseInt(dependentsCount);
 	}
+
 	
 	@Override
 	public String toString() {
